@@ -1,0 +1,46 @@
+FROM ubuntu:22.04
+
+
+# Set environment variables
+#ENV DEBIAN_FRONTEND=noninteractive
+#ENV RUBY_VERSION=3.1.2
+#ENV NODE_VERSION=16
+#ENV APP_HOME=/app
+
+
+WORKDIR /code
+
+#RUN apt-get remove -y ruby ruby-full ruby3.0 && \
+#    apt-get autoremove -y && \
+#    rm -rf /usr/bin/ruby /usr/bin/gem
+
+# Install dependencies
+RUN apt-get update -y && apt-get install -y \
+    rbenv curl htop telnet wget vim git \
+    net-tools software-properties-common \
+    libpq-dev gnupg build-essential \
+    libssl-dev postgresql-client ca-certificates \
+    libreadline-dev zlib1g-dev libyaml-dev libffi-dev libgdbm-dev
+
+ENV PATH="${HOME}/.rbenv/plugins/ruby-build/bin:${HOME}/.rbenv/versions/3.1.2/bin:${PATH}"
+ENV RUBYOPT="-rlogger"
+
+RUN rm -rf ${HOME}/.rbenv/plugins/ruby-build && \
+    git clone https://github.com/rbenv/ruby-build.git ${HOME}/.rbenv/plugins/ruby-build
+
+# Install ruby v3.1.2 and rails 7.0.1
+RUN rbenv init && rbenv install 3.1.2 && \
+    rbenv global 3.1.2 && \
+    rbenv rehash && \
+    gem install bundler && \
+    gem install rails -v 7.0.1 && \
+    gem install rubocop
+
+# Install nvm and Node.js 16.20.2
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && \
+    \. "${HOME}/.nvm/nvm.sh" && \
+    nvm install 16
+
+
+
+

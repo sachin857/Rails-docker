@@ -17,9 +17,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  username: marvels
-  password: rails
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+    #host: localhost
+    #username: marvels
+    #password: rails
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling

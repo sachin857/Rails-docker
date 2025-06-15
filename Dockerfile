@@ -3,7 +3,7 @@ FROM ruby:3.1.2
 
 WORKDIR /code
 
-RUN apt-get update -y && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     curl htop telnet wget vim git \
     net-tools software-properties-common \
     gnupg build-essential \

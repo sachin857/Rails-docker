@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    image: budgy_app:latest
+    container_name: budgy_app
+    command: bash -c "/code/entrypoint.sh"
+    volumes:
+      - ./Budget-App:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: postgres_db
+      DATABASE_USERNAME: marvels
+      DATABASE_PASSWORD: rails
+      RAILS_ENV: development
+
+  db:
+    image: postgres:14
+    container_name: postgres_db
+    volumes:
+      - ./mydb:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: marvels
+      POSTGRES_PASSWORD: rails
+      POSTGRES_DB: Budgy_development
+    ports:
+      - "5432:5432"
+  
+volumes:
+  mydb:

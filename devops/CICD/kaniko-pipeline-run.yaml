@@ -1,0 +1,31 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: build-and-push-kaniko-pipeline-run
+spec:
+  pipelineRef:
+    name: build-and-push-kaniko-pipeline
+  params:
+    - name: git-url
+      value: https://github.com/sachin857/assesment_test.git
+      #value: git@github.com:sachin857/assesment_test.git
+    - name: image-url
+      value: docker.io/sachin857/assesment:v1
+    - name: dockerfile-path
+      value: Dockerfile
+    - name: context-dir
+      value: .
+  workspaces:
+    - name: shared-workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 5Gi
+          storageClassName: standard  # optional
+      #emptyDir: {}
+    - name: docker-config
+      secret:
+        secretName: dockerhub-creds  # Kubernetes Secret with Docker Hub creds

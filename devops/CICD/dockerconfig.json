@@ -1,0 +1,7 @@
+{
+  "auths": {
+    "https://registry-1.docker.io/": {
+      "auth": "c2FjaGluODU3OmRja3JfcGF0X3hqaUlEN2Z2ZHhEQ2xvNm01QjR5elE3SjJHNAo="
+    }
+  }
+}

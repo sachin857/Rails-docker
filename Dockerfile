@@ -17,8 +17,7 @@ RUN gem install bundler && \
     gem install rubocop
 
 # Install nvm and Node.js 16.20.2
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && \
-    \. "${HOME}/.nvm/nvm.sh" && \
-    nvm install 16
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt install -y nodejs
 
 COPY ./Budget-App/ /code

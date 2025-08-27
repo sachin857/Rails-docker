@@ -1,7 +1,7 @@
 
 services:
   web:
-    image: budgy_app:latest
+    image: sachin857/assesment:v1
     container_name: budgy_app
     command: bash -c "/code/entrypoint.sh"
     volumes:

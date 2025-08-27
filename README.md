@@ -1,7 +1,6 @@
 
 ---
 
-```markdown
 # 🚀 Deplopyment of Ruby based Web application  
 
 [![Docker](https://img.shields.io/badge/Docker-Deployment-blue?logo=docker)](https://www.docker.com/)  
@@ -17,15 +16,15 @@ Thank you [@evans22j](https://github.com/evans22j) for open-sourcing this awesom
 ---
 
 ## 📂 Directory Structure  
-```
 
+```
 .
 ├── Budget-App     # Ruby-based web app
 ├── devops         # Dockerfile, docker-compose, and related backups
 │   └── CICD       # CI/CD tool deployment files for k8s
 
+```
 
-````
 
 ---
 
@@ -35,7 +34,7 @@ Thank you [@evans22j](https://github.com/evans22j) for open-sourcing this awesom
 If Docker is not installed, run:  
 ```bash
 bash -x ./devops/docker_install
-````
+
 
 ### 2. Clone Repository
 

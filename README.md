@@ -34,7 +34,7 @@ Thank you [@evans22j](https://github.com/evans22j) for open-sourcing this awesom
 If Docker is not installed, run:  
 ```bash
 bash -x ./devops/docker_install
-
+```
 
 ### 2. Clone Repository
 
@@ -54,10 +54,18 @@ docker build -t sachin857/assessment:v1 .
 docker-compose up -d
 ```
 
-### 5. Clean Up Deployment
+### Clean Up Deployment
 
 ```bash
 docker-compose down
+```
+
+### To check if application is running:
+
+Wait for 3-4 minute and then run the URL into the browser:
+
+```bash
+http://localhost:3000
 ```
 
 ---

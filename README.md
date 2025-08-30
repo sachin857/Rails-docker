@@ -66,11 +66,10 @@ docker-compose down
 
 
 ### To check if application is running:
-- Note!
----
-The docker image is not well optimize at this moment. Issue is it is building artifacts post deployment which should not happen. I will work on it.
+-- Note!
+- The docker image is not well optimize at this moment. Issue is it is building artifacts post deployment which should not happen. I will work on it.
 For now wait for 4-5 minute and then run below command into the browser.
----
+
 
 ```bash
 http://localhost:3000
@@ -85,9 +84,6 @@ For Kubernetes deployment, use the dedicated repo:
 
 👉 [@sachin857/Rails-kube](https://github.com/sachin857/Rails-kube)
 
-```bash
-git clone https://github.com/sachin857/Rails-kube.git && cd Rails-kube
-```
 
 ---
 

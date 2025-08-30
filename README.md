@@ -1,7 +1,7 @@
 
 ---
 
-# 🚀 Deplopyment of Ruby based Web application  
+# 🚀 Deployment of Ruby based Web application  
 
 [![Docker](https://img.shields.io/badge/Docker-Deployment-blue?logo=docker)](https://www.docker.com/)  
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Deployment-blue?logo=kubernetes)](https://kubernetes.io/)  
@@ -10,7 +10,7 @@
 ---
 
 ## 🙌 Acknowledgment  
-This project is based on the Ruby web application **The Budget-App**, created by [@evans22j](https://github.com/evans22j).  
+In this project a Ruby web application **The Budget-App**, created by [@evans22j](https://github.com/evans22j).  
 Thank you [@evans22j](https://github.com/evans22j) for open-sourcing this awesome application!  
 
 ---
@@ -36,11 +36,13 @@ If Docker is not installed, run:
 bash -x ./devops/docker_install
 ```
 
+
 ### 2. Clone Repository
 
 ```bash
 git clone https://github.com/sachin857/Rails-docker.git && cd Rails-docker
 ```
+
 
 ### 3. Build Docker Image (if not pulling from DockerHub)
 
@@ -48,11 +50,13 @@ git clone https://github.com/sachin857/Rails-docker.git && cd Rails-docker
 docker build -t sachin857/assessment:v1 .
 ```
 
+
 ### 4. Start Application
 
 ```bash
 docker-compose up -d
 ```
+
 
 ### Clean Up Deployment
 
@@ -60,13 +64,18 @@ docker-compose up -d
 docker-compose down
 ```
 
-### To check if application is running:
 
-Wait for 3-4 minute and then run the URL into the browser:
+### To check if application is running:
+# Note!
+```bash 
+The docker image is not well optimize at this moment. Issue is it is building artifacts post deployment which should not happen. I will work on it.
+For now wait for 4-5 minute and then run below command into the browser.
+```
 
 ```bash
 http://localhost:3000
 ```
+
 
 ---
 
@@ -90,4 +99,3 @@ git clone https://github.com/sachin857/Rails-kube.git && cd Rails-kube
 * 💻 [GitHub @sachin857](https://github.com/sachin857)
 
 ---
-

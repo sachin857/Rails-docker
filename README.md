@@ -87,6 +87,15 @@ For Kubernetes deployment, use the dedicated repo:
 
 ---
 
+### Known issue:
+
+- Post deployment of container takes time due to the build process of artifacts during runtime. Increase server up time by ~5 min.
+- Secret manager need to be implemented for managing creds.
+
+
+---
+
+
 ## 📬 Connect With Me
 
 * 💼 [LinkedIn @uikeysa06](https://www.linkedin.com/in/uikeysa06/)
